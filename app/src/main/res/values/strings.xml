@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">EVoting</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string-array name="splash_desk">
+        <item>Untuk Indonesia Maju!</item>
+        <item>Jangan Golput!</item>
+        <item>Ayo Datang ke TPS!</item>
+    </string-array>
+
+    <string-array name="splash_img">
+        <item>@drawable/project_planning</item>
+        <item>@drawable/analytics</item>
+        <item>@drawable/share_location</item>
+    </string-array>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="beranda">Beranda</string>
     <string name="vote">Vote</string>
