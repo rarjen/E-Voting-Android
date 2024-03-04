@@ -2,9 +2,12 @@ package com.example.evoting.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.evoting.R
 import com.example.evoting.databinding.ActivityMainBinding
 import com.example.evoting.util.SharedPreferenceHelper
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //test
-        //testpush main
+
+
+        val navHomeFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
+        val navController = navHomeFragment.navController
+        val navView: BottomNavigationView = binding.bottomNavigation
+        navView.setupWithNavController(navController)
     }
 }

@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.EVoting" parent="Base.Theme.EVoting" />
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/darkBlue</item>
+
+    </style>
 </resources>
