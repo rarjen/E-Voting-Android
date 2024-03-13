@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.evoting.databinding.SplashItemBinding
 import com.example.evoting.model.SplashScreen
 
-class SplashScreenAdapter(private val splashScreen: List<SplashScreen>): RecyclerView.Adapter<SplashScreenAdapter.SplashScreenHolder>() {
+class SplashScreenAdapter(private val splashScreen: List<SplashScreen>) : RecyclerView.Adapter<SplashScreenAdapter.SplashScreenHolder>() {
 
     inner class SplashScreenHolder(binding: SplashItemBinding) : RecyclerView.ViewHolder(binding.root) {
         private val textDesk = binding.tvsplashDesk
