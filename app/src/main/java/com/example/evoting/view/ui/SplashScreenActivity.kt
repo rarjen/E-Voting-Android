@@ -2,8 +2,10 @@ package com.example.evoting.view.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -12,14 +14,19 @@ import com.example.evoting.databinding.ActivitySplashScreenBinding
 import com.example.evoting.model.SplashScreen
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
+import com.example.evoting.util.Status
 import com.example.evoting.view.adapters.SplashScreenAdapter
 import com.example.evoting.view.ui.login.LoginActivity
+import com.example.evoting.viewmodel.MyViewModel
+import org.koin.android.ext.android.inject
 
 class SplashScreenActivity : AppCompatActivity() {
     private val list = ArrayList<SplashScreen>()
     private val splashScreenAdapter = SplashScreenAdapter(list)
     private var _binding: ActivitySplashScreenBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: MyViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +64,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             binding.loginButton.setOnClickListener {
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
         }
     }
@@ -100,5 +108,23 @@ class SplashScreenActivity : AppCompatActivity() {
         }
         image.recycle()
         return listSplash
+    }
+    private fun fetchTestRoute() {
+        viewModel.testRoute().observe(this){
+            when (it.status) {
+                Status.SUCCESS -> {
+                    val msg = it.data?.message.toString()
+                    Toast.makeText(this@SplashScreenActivity, msg, Toast.LENGTH_SHORT).show()
+                }
+                Status.ERROR -> {
+                    val errorMessage = it.message ?: "Error occured"
+                    Log.e("TESTERROR", errorMessage)
+                    Toast.makeText(this@SplashScreenActivity, "ERROR: $errorMessage", Toast.LENGTH_SHORT).show()
+                }
+                Status.LOADING -> {
+                    Toast.makeText(this@SplashScreenActivity, "Loading", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }

@@ -72,7 +72,7 @@
         tools:layout_editor_absoluteY="124dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_email"
+            android:id="@+id/etNIK"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,17 +86,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="@color/white"
-        android:hint="Nomor Telepon"
+        android:hint="Email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_inputEmail"
         tools:ignore="HardcodedText"
         tools:layout_editor_absoluteY="124dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_noTelp"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
             tools:ignore="TextContrastCheck,TextContrastCheck,VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,7 +108,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
-        android:hint="Buat Password"
+        android:hint="@string/buat_password"
         app:endIconMode="password_toggle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_inputNotelp">

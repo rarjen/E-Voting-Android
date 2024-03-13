@@ -2,6 +2,8 @@ package com.example.evoting.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.evoting.R
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         pref = SharedPreferenceHelper
         val savedToken = pref.read(Enum.PREF_NAME.value).toString()
 
+        Log.d("TOKENUSER", savedToken)
 
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         val navController = navHomeFragment.navController
