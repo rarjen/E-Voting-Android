@@ -22,4 +22,10 @@ object SharedPreferenceHelper {
 
         }
     }
+
+    fun remove(key: String){
+        val prefsEditor: SharedPreferences.Editor = prefs.edit()
+        prefsEditor.remove(key)
+        prefsEditor.apply()
+    }
 }

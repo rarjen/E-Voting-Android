@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/berandaFragment2">
+
+    <fragment
+        android:id="@+id/berandaFragment2"
+        android:name="com.example.evoting.view.fragments.BerandaFragment"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda" />
+    <fragment
+        android:id="@+id/voteFragment"
+        android:name="com.example.evoting.view.fragments.VoteFragment"
+        android:label="fragment_vote"
+        tools:layout="@layout/fragment_vote" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.evoting.view.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/akunFragment"
+        android:name="com.example.evoting.view.fragments.AkunFragment"
+        android:label="fragment_akun"
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_akunFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_akunFragment_to_ubahPasswordFragment"
+            app:destination="@id/ubahPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.evoting.view.fragments.akun.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ubahPasswordFragment"
+        android:name="com.example.evoting.view.fragments.akun.UbahPasswordFragment"
+        android:label="fragment_ubah_password"
+        tools:layout="@layout/fragment_ubah_password" >
+        <action
+            android:id="@+id/action_ubahPasswordFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
+    </fragment>
+</navigation>
