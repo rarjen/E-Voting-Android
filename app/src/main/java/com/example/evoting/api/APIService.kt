@@ -1,6 +1,7 @@
 package com.example.evoting.api
 
 import com.example.evoting.model.AuthMeResponse
+import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.model.LoginRequest
 import com.example.evoting.model.LoginResponse
 import com.example.evoting.model.RegisterRequest
@@ -30,4 +31,9 @@ interface APIService {
     suspend fun authMeEndpoint(
         @Header("Authorization") tokenUser: String?
     ): AuthMeResponse
+
+    @GET("pair-number")
+    suspend fun getAllPairNumberEndpoint(
+        @Header("Authorization") token: String?
+    ): CandidateNumberResponse
 }
