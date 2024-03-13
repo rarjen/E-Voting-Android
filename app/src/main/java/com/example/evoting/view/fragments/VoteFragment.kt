@@ -8,14 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.evoting.R
 import com.example.evoting.databinding.FragmentVoteBinding
 import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
 import com.example.evoting.util.Status
 import com.example.evoting.view.adapters.CandidatePairNumberAdapter
-import com.example.evoting.view.fragments.bottomsheets.BottomSheetAlreadyVotedFragment
+import com.example.evoting.view.fragments.bottomsheets.VoteConfirmationFragment
 import com.example.evoting.viewmodel.MyViewModel
 import org.koin.android.ext.android.inject
 
@@ -65,7 +64,13 @@ class VoteFragment : Fragment() {
 
 
     private fun showCandidate(data: CandidateNumberResponse) {
-        val adapter = CandidatePairNumberAdapter(null)
+        val adapter = CandidatePairNumberAdapter(null, onButtonClick = { id ->
+
+            val bottomSheetConfirmation = VoteConfirmationFragment()
+            bottomSheetConfirmation.setId(id)
+            bottomSheetConfirmation.show(childFragmentManager, bottomSheetConfirmation.tag)
+        })
+
         adapter.submitCandidateNumberResponse(data.data ?: emptyList())
         binding.rvCandidate.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         binding.rvCandidate.adapter = adapter
