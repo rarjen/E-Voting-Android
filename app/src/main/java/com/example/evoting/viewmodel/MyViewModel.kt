@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.evoting.model.LoginRequest
 import com.example.evoting.model.RegisterRequest
+import com.example.evoting.model.VoteRequest
 import com.example.evoting.repository.MyRepository
 import com.example.evoting.util.Resource
 import kotlinx.coroutines.Dispatchers
@@ -45,6 +46,22 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
     fun candidateNumber(token: String?) = liveData(Dispatchers.IO) {
         try {
             emit(Resource.success(data = repository.candidatePairNumber(token)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun getOneCandidateNumber(token: String?, id: String) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getOneCandidatePairNumber(token, id)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun vote(token: String?, voteRequest: VoteRequest) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.votePost(token, voteRequest)))
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }

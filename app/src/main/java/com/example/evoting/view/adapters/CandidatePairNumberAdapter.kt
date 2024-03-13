@@ -13,7 +13,7 @@ import com.example.evoting.model.DataCandidateNumberResponse
 
 class CandidatePairNumberAdapter (
     private val onItemClick: OnItemClickListener? = null,
-//    private val onButtonClick: (String) -> Unit
+    private val onButtonClick: (String) -> Unit
 ) : RecyclerView.Adapter<CandidatePairNumberAdapter.ViewHolder>() {
 
     private val diffCallBack = object : DiffUtil.ItemCallback<DataCandidateNumberResponse>(){
@@ -48,12 +48,12 @@ class CandidatePairNumberAdapter (
 
     inner class ViewHolder(private var binding: CardVoteCandidateBinding): RecyclerView.ViewHolder(binding.root) {
 
-//        init {
-//            binding.buttonVote.setOnClickListener {
-//                val candidateId = differ.currentList[adapterPosition].id
-//                onButtonClick(candidateId!!)
-//            }
-//        }
+        init {
+            binding.buttonVote.setOnClickListener {
+                val id = differ.currentList[adapterPosition].id
+                onButtonClick(id!!)
+            }
+        }
 
 
         @SuppressLint("SetTextI18n")
