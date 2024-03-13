@@ -26,4 +26,6 @@
     <string name="version_1_1_0">Version 1.1.0</string>
     <string name="simpan_profile">Simpan Profile</string>
     <string name="alamat">Alamat</string>
+    <string name="calon_presiden">CALON PRESIDEN</string>
+    <string name="calon_wakil_presiden">CALON WAKIL PRESIDEN</string>
 </resources>

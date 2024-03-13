@@ -15,4 +15,7 @@ class MyRepository() {
     suspend fun registerAuth(registerRequest: RegisterRequest) = apiService.registerEndpoint(registerRequest)
     suspend fun loginAuth(loginRequest: LoginRequest) = apiService.loginEndpoint(loginRequest)
     suspend fun authMe(tokenUser: String?) = apiService.authMeEndpoint(tokenUser)
+
+    //Pair Number
+    suspend fun candidatePairNumber(token: String?) = apiService.getAllPairNumberEndpoint(token)
 }
