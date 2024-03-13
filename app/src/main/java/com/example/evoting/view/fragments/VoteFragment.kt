@@ -15,6 +15,7 @@ import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
 import com.example.evoting.util.Status
 import com.example.evoting.view.adapters.CandidatePairNumberAdapter
+import com.example.evoting.view.fragments.bottomsheets.BottomSheetAlreadyVotedFragment
 import com.example.evoting.viewmodel.MyViewModel
 import org.koin.android.ext.android.inject
 
@@ -42,7 +43,7 @@ class VoteFragment : Fragment() {
     }
 
 
-    private fun fetchCandidateNumberCoroutines(token: String){
+    private fun fetchCandidateNumberCoroutines(token: String) {
         viewModel.candidateNumber("Bearer $token").observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
@@ -61,6 +62,7 @@ class VoteFragment : Fragment() {
             }
         }
     }
+
 
     private fun showCandidate(data: CandidateNumberResponse) {
         val adapter = CandidatePairNumberAdapter(null)
