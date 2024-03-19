@@ -23,4 +23,7 @@ class MyRepository() {
 
     //Vote
     suspend fun votePost(token: String?, voteRequest: VoteRequest) = apiService.voteEndpoint(token, voteRequest)
+
+    //Voting Result
+    suspend fun getAllVoteResult(token: String?) = apiService.getAllVotingResultEndpoint(token)
 }

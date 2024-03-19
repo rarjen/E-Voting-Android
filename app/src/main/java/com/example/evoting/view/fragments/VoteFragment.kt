@@ -76,4 +76,11 @@ class VoteFragment : Fragment() {
         binding.rvCandidate.adapter = adapter
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 }

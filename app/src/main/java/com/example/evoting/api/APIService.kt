@@ -10,6 +10,7 @@ import com.example.evoting.model.RegisterRequest
 import com.example.evoting.model.RegisterResponse
 import com.example.evoting.model.TestResponse
 import com.example.evoting.model.VoteRequest
+import com.example.evoting.model.VotingResultResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -52,4 +53,9 @@ interface APIService {
         @Header("Authorization") token: String?,
         @Body request: VoteRequest
     ): CreateVoteResponse
+
+    @GET("voting-result")
+    suspend fun getAllVotingResultEndpoint(
+        @Header("Authorization") token: String?
+    ): VotingResultResponse
 }

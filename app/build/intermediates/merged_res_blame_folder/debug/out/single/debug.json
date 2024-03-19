@@ -1,0 +1,246 @@
+[
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_how_to_vote_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_how_to_vote_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_bottom_sheet_already_voted.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_bottom_sheet_already_voted.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_beranda.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_beranda.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\font_montserrat_regular.ttf.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\font\\montserrat_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_card_result_candidate.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\card_result_candidate.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\font_montserrat_bold.ttf.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\font\\montserrat_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_close_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_close_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_pencil_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\pencil_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_project_planning.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\project_planning.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\arrow_back_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_indicator_active.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\indicator_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_setting_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\setting_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\circle_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_activity_splash_screen.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_splash_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_bar_chart_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_bar_chart_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\navigation_nav.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\navigation\\nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\menu_menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\menu\\menu_bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_background_logo.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\background_logo.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-pngs-59:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_result.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_logout_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\logout_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_brain_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\brain_svgrepo_com.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_analytics.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\analytics.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_splash_item.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\splash_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_vote_confirmation.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_vote_confirmation.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_illustration__secure_safe_shield_man_login_key_login_.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\illustration__secure_safe_shield_man_login_key_login_.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_indicator_inactive.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\indicator_inactive.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.evoting.app-merged_res-63:/layout_card_result_candidate.xml.flat",
+        "source": "com.example.evoting.app-main-65:/layout/card_result_candidate.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_vote.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_vote.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\font_montserrat_semi_bold.ttf.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\font\\montserrat_semi_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_garuda.png.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\garuda.png"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_profile.png.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\profile.png"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_card_vote_candidate.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\card_vote_candidate.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_ubah_password.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_ubah_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_insert_photo_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\insert_photo_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_share_location.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\share_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_flag.png.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\flag.png"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_fragment_akun.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_akun.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_baseline_arrow_forward_24.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_arrow_forward_24.xml"
+    }
+]

@@ -1,60 +1,87 @@
 package com.example.evoting.view.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.evoting.R
+import com.example.evoting.databinding.FragmentBerandaBinding
+import com.example.evoting.util.Crypto
+import com.example.evoting.util.SharedPreferenceHelper
+import com.example.evoting.util.SocketHandler
+import com.example.evoting.viewmodel.MyViewModel
+import io.socket.client.Socket
+import io.socket.emitter.Emitter
+import org.json.JSONArray
+import org.json.JSONObject
+import org.koin.android.ext.android.inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BerandaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BerandaFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentBerandaBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: MyViewModel by inject()
+
+    private lateinit var pref: SharedPreferenceHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beranda, container, false)
-    }
+    ): View {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BerandaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BerandaFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        _binding = FragmentBerandaBinding.inflate(inflater, container, false)
+
+        binding.connectionButton.setOnClickListener {
+            SocketHandler.setSocket()
+            SocketHandler.establishConnection()
+
+            val mSocket = SocketHandler.getSocket()
+
+            mSocket.on("data_result") { args ->
+                if (args[0] != null) {
+                    val counter = args[0] as Int
+                    requireActivity().runOnUiThread {
+                        binding.tv.text = counter.toString()
+//                        countTextView.text = counter.toString()
+//                        Log.d("SocketEvent", counter.toString())
+                    }
                 }
             }
+        }
+
+        binding.tv.setOnClickListener {
+            val data = JSONArray().apply {
+                put("data1")
+                put("data2")
+            }
+
+            SocketHandler.setSocket()
+            SocketHandler.establishConnection()
+
+            val mSocket = SocketHandler.getSocket()
+
+            mSocket.emit("data_received", data)
+        }
+
+        binding.disconnectButton.setOnClickListener {
+//            SocketHandler.closeConnection()
+
+            val crypto = Crypto()
+            Log.d("CRYPTO", crypto.encrypt("test"))
+        }
+
+        return binding.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        SocketHandler.disconnect()
+//    }
 }

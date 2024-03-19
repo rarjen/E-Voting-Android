@@ -97,4 +97,10 @@ dependencies {
     //View Pager & Splash Screen
     implementation("androidx.viewpager:viewpager:1.0.0")
 
+    //Socket.io
+    implementation("io.socket:socket.io-client:2.1.0")
+
+    //Dotenv
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+
 }
