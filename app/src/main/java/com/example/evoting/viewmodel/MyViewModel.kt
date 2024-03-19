@@ -66,4 +66,12 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }
     }
+
+    fun getAllResult(token: String?) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getAllVoteResult(token)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
 }

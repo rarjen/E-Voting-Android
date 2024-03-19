@@ -1,5 +1,6 @@
 package com.example.evoting.view.fragments.bottomsheets
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,9 +13,13 @@ import com.example.evoting.R
 import com.example.evoting.databinding.FragmentVoteConfirmationBinding
 import com.example.evoting.model.DataGetOneCandidateResponse
 import com.example.evoting.model.GetOneCandidateNumberResponse
+import com.example.evoting.model.VoteRequest
+import com.example.evoting.util.Crypto
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
+import com.example.evoting.util.SocketHandler
 import com.example.evoting.util.Status
+import com.example.evoting.view.ui.MainActivity
 import com.example.evoting.viewmodel.MyViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.android.ext.android.inject
@@ -29,7 +34,6 @@ class VoteConfirmationFragment : BottomSheetDialogFragment() {
     private var id: String? = null
 
     private lateinit var pref: SharedPreferenceHelper
-
 
     fun setId(id: String) {
         this.id = id
@@ -46,8 +50,27 @@ class VoteConfirmationFragment : BottomSheetDialogFragment() {
 
         fetchOneCandidateNumberCoroutines(savedToken, this.id!!)
 
+        SocketHandler.setSocket()
+        SocketHandler.establishConnection()
+
         binding.buttonYa.setOnClickListener {
-            Toast.makeText(requireContext(), "Berhasil vote!", Toast.LENGTH_SHORT).show()
+            val mSocket = SocketHandler.getSocket()
+            mSocket.emit("new_vote", id.toString())
+
+            val encryptedId = Crypto().encrypt(this.id!!)
+
+            postVoteCoroutines(savedToken, encryptedId)
+        }
+
+        val mSocket = SocketHandler.getSocket()
+        mSocket.on("new_vote") { args ->
+            val candidateId = args[0] as String
+
+            if (candidateId == id.toString()) {
+                requireActivity().runOnUiThread {
+                    Toast.makeText(requireContext(), "Anda sudah melakukan vote!", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
         binding.buttonBatal.setOnClickListener {
@@ -69,6 +92,31 @@ class VoteConfirmationFragment : BottomSheetDialogFragment() {
                 }
                 Status.LOADING -> {
                     Log.d("Loading", "Loading")
+                }
+            }
+        }
+    }
+
+    private fun postVoteCoroutines(token: String, id: String) {
+        val voteRequest = VoteRequest(id)
+        viewModel.vote("Bearer $token", voteRequest).observe(viewLifecycleOwner) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    startActivity(Intent(requireActivity(), MainActivity::class.java))
+                }
+                Status.ERROR -> {
+                    Toast.makeText(requireContext(), "Uh oh something went wrong!", Toast.LENGTH_SHORT).show()
+                    binding.buttonYa.isEnabled = false
+                    binding.buttonYa.isActivated = false
+                    binding.buttonBatal.isEnabled = false
+                    binding.buttonBatal.isActivated = false
+                }
+                Status.LOADING -> {
+                    Log.d("Loading", "Loading")
+                    binding.buttonYa.isEnabled = false
+                    binding.buttonYa.isActivated = false
+                    binding.buttonBatal.isEnabled = false
+                    binding.buttonBatal.isActivated = false
                 }
             }
         }

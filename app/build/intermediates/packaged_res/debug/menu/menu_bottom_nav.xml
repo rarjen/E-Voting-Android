@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/berandaFragment2"
+        android:enabled="true"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/beranda" />
+    <item
+        android:id="@+id/voteFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_how_to_vote_24"
+        android:title="@string/vote" />
+    <item
+        android:id="@+id/resultFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_bar_chart_24"
+        android:title="@string/hasil" />
+    <item
+        android:id="@+id/akunFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_person_24"
+        android:title="@string/akun" />
+
+</menu>
