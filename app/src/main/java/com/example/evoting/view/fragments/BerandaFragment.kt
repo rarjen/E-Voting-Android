@@ -33,44 +33,6 @@ class BerandaFragment : Fragment() {
 
         _binding = FragmentBerandaBinding.inflate(inflater, container, false)
 
-        binding.connectionButton.setOnClickListener {
-            SocketHandler.setSocket()
-            SocketHandler.establishConnection()
-
-            val mSocket = SocketHandler.getSocket()
-
-            mSocket.on("data_result") { args ->
-                if (args[0] != null) {
-                    val counter = args[0] as Int
-                    requireActivity().runOnUiThread {
-                        binding.tv.text = counter.toString()
-//                        countTextView.text = counter.toString()
-//                        Log.d("SocketEvent", counter.toString())
-                    }
-                }
-            }
-        }
-
-        binding.tv.setOnClickListener {
-            val data = JSONArray().apply {
-                put("data1")
-                put("data2")
-            }
-
-            SocketHandler.setSocket()
-            SocketHandler.establishConnection()
-
-            val mSocket = SocketHandler.getSocket()
-
-            mSocket.emit("data_received", data)
-        }
-
-        binding.disconnectButton.setOnClickListener {
-//            SocketHandler.closeConnection()
-
-            val crypto = Crypto()
-            Log.d("CRYPTO", crypto.encrypt("test"))
-        }
 
         return binding.root
     }
@@ -79,9 +41,4 @@ class BerandaFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        SocketHandler.disconnect()
-//    }
 }

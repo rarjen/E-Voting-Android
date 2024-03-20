@@ -10,6 +10,7 @@ import com.example.evoting.R
 import com.example.evoting.databinding.ActivityMainBinding
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
+import com.example.evoting.util.SocketHandler
 import com.example.evoting.util.Status
 import com.example.evoting.view.fragments.bottomsheets.BottomSheetAlreadyVotedFragment
 import com.example.evoting.viewmodel.MyViewModel
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         val savedToken = pref.read(Enum.PREF_NAME.value).toString()
 
         fetchUserCoroutines(savedToken)
+
+        SocketHandler.setSocket()
+        SocketHandler.establishConnection()
 
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         val navController = navHomeFragment.navController
@@ -71,6 +75,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        SocketHandler.closeConnection()
     }
 
 }
