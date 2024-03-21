@@ -14,6 +14,7 @@ color white
 drawable analytics
 drawable arrow_back_24
 drawable background_logo
+drawable banner_pemilu
 drawable baseline_arrow_forward_24
 drawable baseline_bar_chart_24
 drawable baseline_close_24
@@ -61,9 +62,7 @@ id capresTV
 id card
 id cawapres
 id cawapresTV
-id connectionButton
 id container_fragment
-id disconnectButton
 id editProfilePicture
 id emailField
 id emailLog_lay
@@ -73,10 +72,12 @@ id etPassword
 id et_email
 id et_nama
 id et_password
+id imageBanner
 id imageButton
 id imageClose
 id imageLayout
 id imageView
+id imgParty
 id indicatorContainer
 id ivBack
 id ivCart
@@ -100,16 +101,17 @@ id profilSaya
 id profileFragment
 id profile_image
 id progressBar
+id progressBarParties
 id repeatPassword
 id resultFragment
 id rvCandidate
+id rvPartai
 id rvResult
 id separatorLine
 id separatorLine1
 id splashScreenSlider
 id textContainer
 id textView
-id tv
 id tvAkun
 id tvCalonPresiden
 id tvCalonWakilPresiden
@@ -117,8 +119,10 @@ id tvIndicatorPercentage
 id tvMasukTanpaLogin
 id tvRegister
 id tvSelamat
+id tvSelamatDatang
 id tvTotalVote
 id tvUbahPassword
+id tvValueName
 id tvVersion
 id tvVote
 id tv_login_here
@@ -128,6 +132,7 @@ id txt_inputNotelp
 id ubahPassword
 id ubahPasswordFragment
 id updateProfileBtn
+id valueNameParty
 id valueTotalSuara
 id voteFragment
 id votePercentage
@@ -135,6 +140,7 @@ layout activity_login
 layout activity_main
 layout activity_register
 layout activity_splash_screen
+layout card_party_slider
 layout card_result_candidate
 layout card_vote_candidate
 layout fragment_akun

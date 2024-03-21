@@ -27,11 +27,11 @@
                 android:paddingVertical="5dp"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 app:layout_constraintBottom_toTopOf="@id/separatorLine1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/montserrat_bold"/>
 
             <View
@@ -98,7 +98,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="Total Suara: "/>
 
             <TextView
@@ -109,14 +109,14 @@
                 app:layout_constraintTop_toBottomOf="@id/tvTotalVote"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textAlignment="center"
-                android:fontFamily="@font/montserrat_bold"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="1.500" />
 
             <FrameLayout
                 app:layout_constraintTop_toBottomOf="@id/valueTotalSuara"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 

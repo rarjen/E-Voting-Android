@@ -13,6 +13,7 @@ object SocketHandler {
     fun setSocket() {
         try {
             mSocket = IO.socket("http://10.0.2.2:3000")
+//            mSocket = IO.socket("https://api-voting.jasa-nikah-siri-amanah-profesional.com")
         } catch (e: URISyntaxException) {
             Log.d("ERROR", "Error: $e")
         }

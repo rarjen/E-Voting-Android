@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.evoting.model.LoginRequest
 import com.example.evoting.model.RegisterRequest
+import com.example.evoting.model.ResetPasswordRequest
 import com.example.evoting.model.VoteRequest
 import com.example.evoting.repository.MyRepository
 import com.example.evoting.util.Resource
@@ -70,6 +71,22 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
     fun getAllResult(token: String?) = liveData(Dispatchers.IO) {
         try {
             emit(Resource.success(data = repository.getAllVoteResult(token)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun resetPassword(token: String?, resetPasswordRequest: ResetPasswordRequest) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.resetPasswordUser(token, resetPasswordRequest)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun getAllPartiesClient(token: String?) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getAllParties(token)))
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }

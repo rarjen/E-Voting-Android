@@ -3,17 +3,21 @@ package com.example.evoting.api
 import com.example.evoting.model.AuthMeResponse
 import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.model.CreateVoteResponse
+import com.example.evoting.model.GetAllPartiesResponse
 import com.example.evoting.model.GetOneCandidateNumberResponse
 import com.example.evoting.model.LoginRequest
 import com.example.evoting.model.LoginResponse
 import com.example.evoting.model.RegisterRequest
 import com.example.evoting.model.RegisterResponse
+import com.example.evoting.model.ResetPasswordRequest
+import com.example.evoting.model.ResetPasswordResponse
 import com.example.evoting.model.TestResponse
 import com.example.evoting.model.VoteRequest
 import com.example.evoting.model.VotingResultResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -58,4 +62,15 @@ interface APIService {
     suspend fun getAllVotingResultEndpoint(
         @Header("Authorization") token: String?
     ): VotingResultResponse
+
+    @PATCH("auth/reset-password")
+    suspend fun resetPasswordEndpoint(
+        @Header("Authorization") token: String?,
+        @Body request: ResetPasswordRequest
+    ): ResetPasswordResponse
+
+    @GET("party")
+    suspend fun getAllPartiesEndpoint(
+        @Header("Authorization") token: String?
+    ): GetAllPartiesResponse
 }

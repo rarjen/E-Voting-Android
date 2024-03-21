@@ -50,11 +50,13 @@ class ResultFragment : Fragment() {
                 newData.add(votingResult)
             }
 
-            requireActivity().runOnUiThread{
-                data.clear() // Membersihkan data sebelum menambahkan data baru
-                data.addAll(newData) // Menambahkan data baru ke data yang sudah bersih
-                showData(data)
-                binding.progressBar.visibility = View.GONE
+            if (isAdded && !isDetached) {
+                requireActivity().runOnUiThread{
+                    data.clear() // Membersihkan data sebelum menambahkan data baru
+                    data.addAll(newData) // Menambahkan data baru ke data yang sudah bersih
+                    showData(data)
+                    binding.progressBar.visibility = View.GONE
+                }
             }
 
         }
