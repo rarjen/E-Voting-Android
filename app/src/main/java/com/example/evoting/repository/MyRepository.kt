@@ -31,4 +31,7 @@ class MyRepository() {
 
     //Party
     suspend fun getAllParties(token: String?) = apiService.getAllPartiesEndpoint(token)
+
+    //Presidential
+    suspend fun getAllPresidential(token: String?) = apiService.getAllPresidentialEndpoint(token)
 }

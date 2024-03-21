@@ -91,4 +91,12 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }
     }
+
+    fun getAllPresindentialClient(token: String?) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getAllPresidential(token)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
 }

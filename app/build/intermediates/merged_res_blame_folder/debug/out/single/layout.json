@@ -12,16 +12,20 @@
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_result.xml"
     },
     {
-        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\fragment_ubah_password.xml",
-        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_ubah_password.xml"
-    },
-    {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\activity_splash_screen.xml",
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_splash_screen.xml"
     },
     {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\fragment_ubah_password.xml",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_ubah_password.xml"
+    },
+    {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\fragment_bottom_sheet_already_voted.xml",
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_bottom_sheet_already_voted.xml"
+    },
+    {
+        "merged": "com.example.evoting.app-mergeDebugResources-62:/layout/card_candidate.xml",
+        "source": "com.example.evoting.app-main-65:/layout/card_candidate.xml"
     },
     {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\fragment_beranda.xml",
@@ -44,10 +48,6 @@
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.evoting.app-mergeDebugResources-62:/layout/fragment_beranda.xml",
-        "source": "com.example.evoting.app-main-65:/layout/fragment_beranda.xml"
-    },
-    {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\card_vote_candidate.xml",
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\card_vote_candidate.xml"
     },
@@ -58,6 +58,10 @@
     {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\fragment_vote.xml",
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\fragment_vote.xml"
+    },
+    {
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\card_candidate.xml",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\card_candidate.xml"
     },
     {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-mergeDebugResources-62:\\layout\\card_result_candidate.xml",

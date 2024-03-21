@@ -52,6 +52,10 @@
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\baseline_close_24.xml"
     },
     {
+        "merged": "com.example.evoting.app-merged_res-63:/layout_card_candidate.xml.flat",
+        "source": "com.example.evoting.app-main-65:/layout/card_candidate.xml"
+    },
+    {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_pencil_24.xml.flat",
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\pencil_24.xml"
     },
@@ -88,8 +92,8 @@
         "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\drawable\\indicator_active.xml"
     },
     {
-        "merged": "com.example.evoting.app-merged_res-63:/layout_fragment_beranda.xml.flat",
-        "source": "com.example.evoting.app-main-65:/layout/fragment_beranda.xml"
+        "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\layout_card_candidate.xml.flat",
+        "source": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-main-65:\\layout\\card_candidate.xml"
     },
     {
         "merged": "C:\\Users\\otnie\\.gradle\\daemon\\8.0\\com.example.evoting.app-merged_res-63:\\drawable_setting_24.xml.flat",
