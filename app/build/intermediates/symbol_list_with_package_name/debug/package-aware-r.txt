@@ -3474,6 +3474,7 @@ id imageButton
 id imageClose
 id imageLayout
 id imageView
+id imgCapres
 id imgParty
 id immediateStop
 id included
@@ -3637,6 +3638,7 @@ id profilSaya
 id profileFragment
 id profile_image
 id progressBar
+id progressBarCapres
 id progressBarParties
 id progress_action
 id progress_circular
@@ -3658,6 +3660,8 @@ id rounded
 id row_index_key
 id rtl
 id rvCandidate
+id rvCapres
+id rvCawapres
 id rvPartai
 id rvResult
 id save_non_transition_alpha
@@ -3777,6 +3781,8 @@ id triangle
 id tvAkun
 id tvCalonPresiden
 id tvCalonWakilPresiden
+id tvCapres
+id tvCawapres
 id tvIndicatorPercentage
 id tvMasukTanpaLogin
 id tvRegister
@@ -3784,6 +3790,7 @@ id tvSelamat
 id tvSelamatDatang
 id tvTotalVote
 id tvUbahPassword
+id tvValueCandidateName
 id tvValueName
 id tvVersion
 id tvVote
@@ -3942,6 +3949,7 @@ layout activity_login
 layout activity_main
 layout activity_register
 layout activity_splash_screen
+layout card_candidate
 layout card_party_slider
 layout card_result_candidate
 layout card_vote_candidate

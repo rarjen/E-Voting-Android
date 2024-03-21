@@ -26,10 +26,25 @@ public final class FragmentBerandaBinding implements ViewBinding {
   public final ImageView imageBanner;
 
   @NonNull
+  public final ProgressBar progressBarCapres;
+
+  @NonNull
   public final ProgressBar progressBarParties;
 
   @NonNull
+  public final RecyclerView rvCapres;
+
+  @NonNull
+  public final RecyclerView rvCawapres;
+
+  @NonNull
   public final RecyclerView rvPartai;
+
+  @NonNull
+  public final TextView tvCapres;
+
+  @NonNull
+  public final TextView tvCawapres;
 
   @NonNull
   public final TextView tvSelamatDatang;
@@ -38,12 +53,19 @@ public final class FragmentBerandaBinding implements ViewBinding {
   public final TextView tvValueName;
 
   private FragmentBerandaBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageBanner,
-      @NonNull ProgressBar progressBarParties, @NonNull RecyclerView rvPartai,
+      @NonNull ProgressBar progressBarCapres, @NonNull ProgressBar progressBarParties,
+      @NonNull RecyclerView rvCapres, @NonNull RecyclerView rvCawapres,
+      @NonNull RecyclerView rvPartai, @NonNull TextView tvCapres, @NonNull TextView tvCawapres,
       @NonNull TextView tvSelamatDatang, @NonNull TextView tvValueName) {
     this.rootView = rootView;
     this.imageBanner = imageBanner;
+    this.progressBarCapres = progressBarCapres;
     this.progressBarParties = progressBarParties;
+    this.rvCapres = rvCapres;
+    this.rvCawapres = rvCawapres;
     this.rvPartai = rvPartai;
+    this.tvCapres = tvCapres;
+    this.tvCawapres = tvCawapres;
     this.tvSelamatDatang = tvSelamatDatang;
     this.tvValueName = tvValueName;
   }
@@ -81,15 +103,45 @@ public final class FragmentBerandaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBarCapres;
+      ProgressBar progressBarCapres = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarCapres == null) {
+        break missingId;
+      }
+
       id = R.id.progressBarParties;
       ProgressBar progressBarParties = ViewBindings.findChildViewById(rootView, id);
       if (progressBarParties == null) {
         break missingId;
       }
 
+      id = R.id.rvCapres;
+      RecyclerView rvCapres = ViewBindings.findChildViewById(rootView, id);
+      if (rvCapres == null) {
+        break missingId;
+      }
+
+      id = R.id.rvCawapres;
+      RecyclerView rvCawapres = ViewBindings.findChildViewById(rootView, id);
+      if (rvCawapres == null) {
+        break missingId;
+      }
+
       id = R.id.rvPartai;
       RecyclerView rvPartai = ViewBindings.findChildViewById(rootView, id);
       if (rvPartai == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCapres;
+      TextView tvCapres = ViewBindings.findChildViewById(rootView, id);
+      if (tvCapres == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCawapres;
+      TextView tvCawapres = ViewBindings.findChildViewById(rootView, id);
+      if (tvCawapres == null) {
         break missingId;
       }
 
@@ -105,8 +157,9 @@ public final class FragmentBerandaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentBerandaBinding((ConstraintLayout) rootView, imageBanner,
-          progressBarParties, rvPartai, tvSelamatDatang, tvValueName);
+      return new FragmentBerandaBinding((ConstraintLayout) rootView, imageBanner, progressBarCapres,
+          progressBarParties, rvCapres, rvCawapres, rvPartai, tvCapres, tvCawapres, tvSelamatDatang,
+          tvValueName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

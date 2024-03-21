@@ -10,17 +10,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.evoting.databinding.FragmentBerandaBinding
 import com.example.evoting.model.GetAllPartiesResponse
-import com.example.evoting.util.Crypto
+import com.example.evoting.model.GetAllPresidentialResponse
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
-import com.example.evoting.util.SocketHandler
 import com.example.evoting.util.Status
 import com.example.evoting.view.adapters.PartiesAdapter
+import com.example.evoting.view.adapters.ProfilePresidentialCandidateAdapter
 import com.example.evoting.viewmodel.MyViewModel
-import io.socket.client.Socket
-import io.socket.emitter.Emitter
-import org.json.JSONArray
-import org.json.JSONObject
 import org.koin.android.ext.android.inject
 
 class BerandaFragment : Fragment() {
@@ -42,6 +38,7 @@ class BerandaFragment : Fragment() {
 
         authMe(savedToken)
         fetchParties(savedToken)
+        fetchPresidential(savedToken)
 
 
         return binding.root
@@ -66,6 +63,29 @@ class BerandaFragment : Fragment() {
                 Status.LOADING -> {
                     Log.d("BERANDATEST", "Error Occured!")
                     binding.progressBarParties.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
+
+    private fun fetchPresidential(token: String?) {
+        viewModel.getAllPresindentialClient("Bearer $token").observe(viewLifecycleOwner) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    binding.progressBarCapres.visibility = View.GONE
+                    showPresidential(it.data!!)
+                }
+
+                Status.ERROR -> {
+                    Log.d("BERANDATEST", "Error Occured: ${it.message}")
+                    Toast.makeText(requireContext(), "Uh oh something went wrong", Toast.LENGTH_SHORT).show()
+                    binding.progressBarCapres.visibility = View.VISIBLE
+
+                }
+
+                Status.LOADING -> {
+                    Log.d("BERANDATEST", "Error Occured!")
+                    binding.progressBarCapres.visibility = View.VISIBLE
                 }
             }
         }
@@ -96,6 +116,13 @@ class BerandaFragment : Fragment() {
         adapter.submitAllParties(data?.data ?: emptyList())
         binding.rvPartai.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvPartai.adapter = adapter
+    }
+
+    private fun showPresidential(data: GetAllPresidentialResponse?) {
+        val adapter = ProfilePresidentialCandidateAdapter()
+        adapter.submitAllPresidential(data?.data ?: emptyList())
+        binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCapres.adapter = adapter
     }
 
 
