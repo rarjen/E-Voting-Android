@@ -4,11 +4,13 @@ package com.example.evoting.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.evoting.R;
@@ -21,20 +23,29 @@ public final class FragmentBerandaBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button connectionButton;
+  public final ImageView imageBanner;
 
   @NonNull
-  public final Button disconnectButton;
+  public final ProgressBar progressBarParties;
 
   @NonNull
-  public final TextView tv;
+  public final RecyclerView rvPartai;
 
-  private FragmentBerandaBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button connectionButton, @NonNull Button disconnectButton, @NonNull TextView tv) {
+  @NonNull
+  public final TextView tvSelamatDatang;
+
+  @NonNull
+  public final TextView tvValueName;
+
+  private FragmentBerandaBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageBanner,
+      @NonNull ProgressBar progressBarParties, @NonNull RecyclerView rvPartai,
+      @NonNull TextView tvSelamatDatang, @NonNull TextView tvValueName) {
     this.rootView = rootView;
-    this.connectionButton = connectionButton;
-    this.disconnectButton = disconnectButton;
-    this.tv = tv;
+    this.imageBanner = imageBanner;
+    this.progressBarParties = progressBarParties;
+    this.rvPartai = rvPartai;
+    this.tvSelamatDatang = tvSelamatDatang;
+    this.tvValueName = tvValueName;
   }
 
   @Override
@@ -64,26 +75,38 @@ public final class FragmentBerandaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.connectionButton;
-      Button connectionButton = ViewBindings.findChildViewById(rootView, id);
-      if (connectionButton == null) {
+      id = R.id.imageBanner;
+      ImageView imageBanner = ViewBindings.findChildViewById(rootView, id);
+      if (imageBanner == null) {
         break missingId;
       }
 
-      id = R.id.disconnectButton;
-      Button disconnectButton = ViewBindings.findChildViewById(rootView, id);
-      if (disconnectButton == null) {
+      id = R.id.progressBarParties;
+      ProgressBar progressBarParties = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarParties == null) {
         break missingId;
       }
 
-      id = R.id.tv;
-      TextView tv = ViewBindings.findChildViewById(rootView, id);
-      if (tv == null) {
+      id = R.id.rvPartai;
+      RecyclerView rvPartai = ViewBindings.findChildViewById(rootView, id);
+      if (rvPartai == null) {
         break missingId;
       }
 
-      return new FragmentBerandaBinding((ConstraintLayout) rootView, connectionButton,
-          disconnectButton, tv);
+      id = R.id.tvSelamatDatang;
+      TextView tvSelamatDatang = ViewBindings.findChildViewById(rootView, id);
+      if (tvSelamatDatang == null) {
+        break missingId;
+      }
+
+      id = R.id.tvValueName;
+      TextView tvValueName = ViewBindings.findChildViewById(rootView, id);
+      if (tvValueName == null) {
+        break missingId;
+      }
+
+      return new FragmentBerandaBinding((ConstraintLayout) rootView, imageBanner,
+          progressBarParties, rvPartai, tvSelamatDatang, tvValueName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
