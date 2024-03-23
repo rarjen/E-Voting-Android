@@ -22,6 +22,7 @@ import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface APIService {
 
@@ -45,7 +46,8 @@ interface APIService {
 
     @GET("pair-number")
     suspend fun getAllPairNumberEndpoint(
-        @Header("Authorization") token: String?
+        @Header("Authorization") token: String?,
+        @Query("number") number: String?
     ): CandidateNumberResponse
 
     @GET("pair-number/{id}")
@@ -78,6 +80,11 @@ interface APIService {
 
     @GET("presidental")
     suspend fun getAllPresidentialEndpoint(
+        @Header("Authorization") token: String?
+    ): GetAllPresidentialResponse
+
+    @GET("vice-presidental")
+    suspend fun getAllVicePresidentialEndpoint(
         @Header("Authorization") token: String?
     ): GetAllPresidentialResponse
 }

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.evoting.R;
+import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -29,6 +29,9 @@ public final class FragmentBerandaBinding implements ViewBinding {
   public final ProgressBar progressBarCapres;
 
   @NonNull
+  public final ProgressBar progressBarCawapres;
+
+  @NonNull
   public final ProgressBar progressBarParties;
 
   @NonNull
@@ -41,33 +44,26 @@ public final class FragmentBerandaBinding implements ViewBinding {
   public final RecyclerView rvPartai;
 
   @NonNull
-  public final TextView tvCapres;
+  public final TabLayout tabLayout;
 
   @NonNull
-  public final TextView tvCawapres;
-
-  @NonNull
-  public final TextView tvSelamatDatang;
-
-  @NonNull
-  public final TextView tvValueName;
+  public final TabLayout tabLayoutNomerUrut;
 
   private FragmentBerandaBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageBanner,
-      @NonNull ProgressBar progressBarCapres, @NonNull ProgressBar progressBarParties,
-      @NonNull RecyclerView rvCapres, @NonNull RecyclerView rvCawapres,
-      @NonNull RecyclerView rvPartai, @NonNull TextView tvCapres, @NonNull TextView tvCawapres,
-      @NonNull TextView tvSelamatDatang, @NonNull TextView tvValueName) {
+      @NonNull ProgressBar progressBarCapres, @NonNull ProgressBar progressBarCawapres,
+      @NonNull ProgressBar progressBarParties, @NonNull RecyclerView rvCapres,
+      @NonNull RecyclerView rvCawapres, @NonNull RecyclerView rvPartai,
+      @NonNull TabLayout tabLayout, @NonNull TabLayout tabLayoutNomerUrut) {
     this.rootView = rootView;
     this.imageBanner = imageBanner;
     this.progressBarCapres = progressBarCapres;
+    this.progressBarCawapres = progressBarCawapres;
     this.progressBarParties = progressBarParties;
     this.rvCapres = rvCapres;
     this.rvCawapres = rvCawapres;
     this.rvPartai = rvPartai;
-    this.tvCapres = tvCapres;
-    this.tvCawapres = tvCawapres;
-    this.tvSelamatDatang = tvSelamatDatang;
-    this.tvValueName = tvValueName;
+    this.tabLayout = tabLayout;
+    this.tabLayoutNomerUrut = tabLayoutNomerUrut;
   }
 
   @Override
@@ -109,6 +105,12 @@ public final class FragmentBerandaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBarCawapres;
+      ProgressBar progressBarCawapres = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarCawapres == null) {
+        break missingId;
+      }
+
       id = R.id.progressBarParties;
       ProgressBar progressBarParties = ViewBindings.findChildViewById(rootView, id);
       if (progressBarParties == null) {
@@ -133,33 +135,21 @@ public final class FragmentBerandaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvCapres;
-      TextView tvCapres = ViewBindings.findChildViewById(rootView, id);
-      if (tvCapres == null) {
+      id = R.id.tabLayout;
+      TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
+      if (tabLayout == null) {
         break missingId;
       }
 
-      id = R.id.tvCawapres;
-      TextView tvCawapres = ViewBindings.findChildViewById(rootView, id);
-      if (tvCawapres == null) {
-        break missingId;
-      }
-
-      id = R.id.tvSelamatDatang;
-      TextView tvSelamatDatang = ViewBindings.findChildViewById(rootView, id);
-      if (tvSelamatDatang == null) {
-        break missingId;
-      }
-
-      id = R.id.tvValueName;
-      TextView tvValueName = ViewBindings.findChildViewById(rootView, id);
-      if (tvValueName == null) {
+      id = R.id.tabLayoutNomerUrut;
+      TabLayout tabLayoutNomerUrut = ViewBindings.findChildViewById(rootView, id);
+      if (tabLayoutNomerUrut == null) {
         break missingId;
       }
 
       return new FragmentBerandaBinding((ConstraintLayout) rootView, imageBanner, progressBarCapres,
-          progressBarParties, rvCapres, rvCawapres, rvPartai, tvCapres, tvCawapres, tvSelamatDatang,
-          tvValueName);
+          progressBarCawapres, progressBarParties, rvCapres, rvCawapres, rvPartai, tabLayout,
+          tabLayoutNomerUrut);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
