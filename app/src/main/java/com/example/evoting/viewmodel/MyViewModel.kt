@@ -44,9 +44,9 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
         }
     }
 
-    fun candidateNumber(token: String?) = liveData(Dispatchers.IO) {
+    fun candidateNumber(token: String?, number: String?) = liveData(Dispatchers.IO) {
         try {
-            emit(Resource.success(data = repository.candidatePairNumber(token)))
+            emit(Resource.success(data = repository.candidatePairNumber(token, number)))
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }
@@ -95,6 +95,14 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
     fun getAllPresindentialClient(token: String?) = liveData(Dispatchers.IO) {
         try {
             emit(Resource.success(data = repository.getAllPresidential(token)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun getAllVicePresidentialClient(token: String?) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getAllVicePresidential(token)))
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }

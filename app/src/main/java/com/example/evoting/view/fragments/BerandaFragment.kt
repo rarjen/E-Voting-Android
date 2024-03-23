@@ -9,14 +9,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.evoting.databinding.FragmentBerandaBinding
+import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.model.GetAllPartiesResponse
 import com.example.evoting.model.GetAllPresidentialResponse
 import com.example.evoting.util.Enum
 import com.example.evoting.util.SharedPreferenceHelper
 import com.example.evoting.util.Status
+import com.example.evoting.view.adapters.GetAllPairNumberAdapter
 import com.example.evoting.view.adapters.PartiesAdapter
 import com.example.evoting.view.adapters.ProfilePresidentialCandidateAdapter
 import com.example.evoting.viewmodel.MyViewModel
+import com.google.android.material.tabs.TabLayout
 import org.koin.android.ext.android.inject
 
 class BerandaFragment : Fragment() {
@@ -36,14 +39,68 @@ class BerandaFragment : Fragment() {
         pref = SharedPreferenceHelper
         val savedToken = pref.read(Enum.PREF_NAME.value).toString()
 
-        authMe(savedToken)
+        setupTabLayout(savedToken)
+        setupTabLayoutNomor(savedToken)
         fetchParties(savedToken)
-        fetchPresidential(savedToken)
 
 
         return binding.root
     }
 
+
+    private fun setupTabLayout(token: String?) {
+        fetchPresidential(token)
+        val tabLayout = binding.tabLayout
+        tabLayout.addTab(tabLayout.newTab().setText("Calon Presiden"))
+        tabLayout.addTab(tabLayout.newTab().setText("Calon Wakil Presiden"))
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.let {
+                    when (it.position) {
+                        0 -> fetchPresidential(token)
+                        1 -> fetchVicePresidential(token)
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // Not needed for this example
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // Not needed for this example
+            }
+        })
+    }
+
+    private fun setupTabLayoutNomor(token: String?) {
+        fetchCandidateNumberCoroutines(token, "1")
+        val tabLayout = binding.tabLayoutNomerUrut
+        tabLayout.addTab(tabLayout.newTab().setText("No. 1"))
+        tabLayout.addTab(tabLayout.newTab().setText("No. 2"))
+        tabLayout.addTab(tabLayout.newTab().setText("No. 3"))
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.let {
+                    when (it.position) {
+                        0 -> fetchCandidateNumberCoroutines(token, "1")
+                        1 -> fetchCandidateNumberCoroutines(token, "2")
+                        2 -> fetchCandidateNumberCoroutines(token, "3")
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // Not needed for this example
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // Not needed for this example
+            }
+        })
+    }
 
     private fun fetchParties(token: String?) {
         viewModel.getAllPartiesClient("Bearer $token").observe(viewLifecycleOwner) {
@@ -91,21 +148,44 @@ class BerandaFragment : Fragment() {
         }
     }
 
-    private fun authMe(token: String?) {
-        viewModel.authMeAuth("Bearer $token").observe(viewLifecycleOwner) {
+    private fun fetchVicePresidential(token: String?) {
+        viewModel.getAllVicePresidentialClient("Bearer $token").observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
-                    binding.tvValueName.text = it.data?.data?.name
+                    binding.progressBarCapres.visibility = View.GONE
+                    showVicePresidential(it.data!!)
                 }
 
                 Status.ERROR -> {
-                    Log.d("AUTHME", "${it.message}")
-                    binding.tvValueName.text = null
+                    Log.d("BERANDATEST", "Error Occured: ${it.message}")
+                    Toast.makeText(requireContext(), "Uh oh something went wrong", Toast.LENGTH_SHORT).show()
+                    binding.progressBarCapres.visibility = View.VISIBLE
+
                 }
 
                 Status.LOADING -> {
-                    Log.d("AUTHME", "LOADING")
-                    binding.tvValueName.text = null
+                    Log.d("BERANDATEST", "Error Occured!")
+                    binding.progressBarCapres.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
+
+    private fun fetchCandidateNumberCoroutines(token: String?, number: String?) {
+        viewModel.candidateNumber("Bearer $token", number).observe(viewLifecycleOwner) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    showCandidate(it.data!!)
+                    binding.progressBarCawapres.visibility = View.GONE
+                }
+                Status.ERROR -> {
+                    val errMsg = it.data?.message.toString()
+                    Toast.makeText(requireContext(), errMsg, Toast.LENGTH_SHORT).show()
+                    binding.progressBarCawapres.visibility = View.VISIBLE
+                }
+                Status.LOADING -> {
+                    Log.d("LOADING", "Loading")
+                    binding.progressBarCawapres.visibility = View.VISIBLE
                 }
             }
         }
@@ -123,6 +203,21 @@ class BerandaFragment : Fragment() {
         adapter.submitAllPresidential(data?.data ?: emptyList())
         binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCapres.adapter = adapter
+    }
+
+    private fun showVicePresidential(data: GetAllPresidentialResponse?) {
+        val adapter = ProfilePresidentialCandidateAdapter()
+        adapter.submitAllPresidential(data?.data ?: emptyList())
+        binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCapres.adapter = adapter
+    }
+
+    private fun showCandidate(data: CandidateNumberResponse) {
+        val adapter =  GetAllPairNumberAdapter(null)
+        adapter.submitData(data.data ?: emptyList())
+        binding.rvCawapres.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+        binding.rvCawapres.adapter = adapter
+
     }
 
 

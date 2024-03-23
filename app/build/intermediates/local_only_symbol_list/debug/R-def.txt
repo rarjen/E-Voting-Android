@@ -37,6 +37,7 @@ drawable profile
 drawable project_planning
 drawable setting_24
 drawable share_location
+drawable tab_indicator
 font montserrat_bold
 font montserrat_regular
 font montserrat_semi_bold
@@ -78,6 +79,7 @@ id imageClose
 id imageLayout
 id imageView
 id imgCapres
+id imgCover
 id imgParty
 id indicatorContainer
 id ivBack
@@ -103,6 +105,7 @@ id profileFragment
 id profile_image
 id progressBar
 id progressBarCapres
+id progressBarCawapres
 id progressBarParties
 id repeatPassword
 id resultFragment
@@ -114,6 +117,8 @@ id rvResult
 id separatorLine
 id separatorLine1
 id splashScreenSlider
+id tabLayout
+id tabLayoutNomerUrut
 id textContainer
 id textView
 id tvAkun
@@ -125,11 +130,11 @@ id tvIndicatorPercentage
 id tvMasukTanpaLogin
 id tvRegister
 id tvSelamat
-id tvSelamatDatang
 id tvTotalVote
 id tvUbahPassword
 id tvValueCandidateName
-id tvValueName
+id tvValuePresidentialName
+id tvValueVicePresidentialName
 id tvVersion
 id tvVote
 id tv_login_here
@@ -148,6 +153,7 @@ layout activity_main
 layout activity_register
 layout activity_splash_screen
 layout card_candidate
+layout card_candidate_pair
 layout card_party_slider
 layout card_result_candidate
 layout card_vote_candidate

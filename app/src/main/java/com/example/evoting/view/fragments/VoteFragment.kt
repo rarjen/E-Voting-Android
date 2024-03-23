@@ -43,7 +43,7 @@ class VoteFragment : Fragment() {
 
 
     private fun fetchCandidateNumberCoroutines(token: String) {
-        viewModel.candidateNumber("Bearer $token").observe(viewLifecycleOwner) {
+        viewModel.candidateNumber("Bearer $token", null).observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
                     showCandidate(it.data!!)

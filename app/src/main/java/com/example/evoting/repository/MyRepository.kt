@@ -20,7 +20,7 @@ class MyRepository() {
     suspend fun resetPasswordUser(token: String?, resetPasswordRequest: ResetPasswordRequest) = apiService.resetPasswordEndpoint(token, resetPasswordRequest)
 
     //Pair Number
-    suspend fun candidatePairNumber(token: String?) = apiService.getAllPairNumberEndpoint(token)
+    suspend fun candidatePairNumber(token: String?, number: String?) = apiService.getAllPairNumberEndpoint(token, number)
     suspend fun getOneCandidatePairNumber(token: String?, id: String) = apiService.getOnePairNumberEndpoint(token, id)
 
     //Vote
@@ -34,4 +34,7 @@ class MyRepository() {
 
     //Presidential
     suspend fun getAllPresidential(token: String?) = apiService.getAllPresidentialEndpoint(token)
+
+    //Vice Predidential
+    suspend fun getAllVicePresidential(token: String?) = apiService.getAllVicePresidentialEndpoint(token)
 }
