@@ -7,6 +7,7 @@ import com.example.evoting.model.DataGetAllPresidentialResponse
 import com.example.evoting.model.GetAllPartiesResponse
 import com.example.evoting.model.GetAllPresidentialResponse
 import com.example.evoting.model.GetOneCandidateNumberResponse
+import com.example.evoting.model.GetOnePartyResponse
 import com.example.evoting.model.LoginRequest
 import com.example.evoting.model.LoginResponse
 import com.example.evoting.model.RegisterRequest
@@ -87,4 +88,10 @@ interface APIService {
     suspend fun getAllVicePresidentialEndpoint(
         @Header("Authorization") token: String?
     ): GetAllPresidentialResponse
+
+    @GET("party/{id}")
+    suspend fun getOnePartyEndpoint(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): GetOnePartyResponse
 }

@@ -43,6 +43,8 @@ font montserrat_regular
 font montserrat_semi_bold
 id action_akunFragment_to_profileFragment
 id action_akunFragment_to_ubahPasswordFragment
+id action_berandaFragment2_to_detailCandidateFragment
+id action_berandaFragment2_to_detailPartyFragment
 id action_profileFragment_to_akunFragment
 id action_ubahPasswordFragment_to_akunFragment
 id addressField
@@ -64,6 +66,8 @@ id card
 id cawapres
 id cawapresTV
 id container_fragment
+id detailCandidateFragment
+id detailPartyFragment
 id editProfilePicture
 id emailField
 id emailLog_lay
@@ -97,6 +101,7 @@ id nameField
 id nav
 id nikField
 id not_have
+id partyImg
 id passwordBaru
 id passwordLama
 id passwordLog_lay
@@ -114,6 +119,8 @@ id rvCapres
 id rvCawapres
 id rvPartai
 id rvResult
+id separator1
+id separator2
 id separatorLine
 id separatorLine1
 id splashScreenSlider
@@ -126,13 +133,19 @@ id tvCalonPresiden
 id tvCalonWakilPresiden
 id tvCapres
 id tvCawapres
+id tvDesc
+id tvFullName
 id tvIndicatorPercentage
 id tvMasukTanpaLogin
+id tvNama
 id tvRegister
 id tvSelamat
 id tvTotalVote
 id tvUbahPassword
 id tvValueCandidateName
+id tvValueDesc
+id tvValueFullNamaPartai
+id tvValueNamaPartai
 id tvValuePresidentialName
 id tvValueVicePresidentialName
 id tvVersion
@@ -160,6 +173,8 @@ layout card_vote_candidate
 layout fragment_akun
 layout fragment_beranda
 layout fragment_bottom_sheet_already_voted
+layout fragment_detail_candidate
+layout fragment_detail_party
 layout fragment_profile
 layout fragment_result
 layout fragment_ubah_password

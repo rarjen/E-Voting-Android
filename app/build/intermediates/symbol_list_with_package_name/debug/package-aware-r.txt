@@ -3271,6 +3271,8 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_berandaFragment2_to_detailCandidateFragment
+id action_berandaFragment2_to_detailPartyFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -3387,6 +3389,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detailCandidateFragment
+id detailPartyFragment
 id dfn_progress_fragment
 id dialog_button
 id dimensions
@@ -3624,6 +3628,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id partyImg
 id passwordBaru
 id passwordLama
 id passwordLog_lay
@@ -3690,6 +3695,8 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id separator1
+id separator2
 id separatorLine
 id separatorLine1
 id sharedValueSet
@@ -3788,13 +3795,19 @@ id tvCalonPresiden
 id tvCalonWakilPresiden
 id tvCapres
 id tvCawapres
+id tvDesc
+id tvFullName
 id tvIndicatorPercentage
 id tvMasukTanpaLogin
+id tvNama
 id tvRegister
 id tvSelamat
 id tvTotalVote
 id tvUbahPassword
 id tvValueCandidateName
+id tvValueDesc
+id tvValueFullNamaPartai
+id tvValueNamaPartai
 id tvValuePresidentialName
 id tvValueVicePresidentialName
 id tvVersion
@@ -3979,6 +3992,8 @@ layout dynamic_feature_install_fragment
 layout fragment_akun
 layout fragment_beranda
 layout fragment_bottom_sheet_already_voted
+layout fragment_detail_candidate
+layout fragment_detail_party
 layout fragment_profile
 layout fragment_result
 layout fragment_ubah_password
