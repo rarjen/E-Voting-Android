@@ -4,25 +4,98 @@ package com.example.evoting.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.evoting.R;
+import com.google.android.material.divider.MaterialDivider;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentDetailCandidateBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentDetailCandidateBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final TextView descValue;
+
+  @NonNull
+  public final ImageView ivBack;
+
+  @NonNull
+  public final ImageView partyImg;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final RecyclerView rvSupportingParties;
+
+  @NonNull
+  public final MaterialDivider separator1;
+
+  @NonNull
+  public final TextView tvCapres;
+
+  @NonNull
+  public final TextView tvCawapres;
+
+  @NonNull
+  public final TextView tvMisi;
+
+  @NonNull
+  public final TextView tvNamaCapresValue;
+
+  @NonNull
+  public final TextView tvNamaCawapresValue;
+
+  @NonNull
+  public final TextView tvParties;
+
+  @NonNull
+  public final TextView tvValueNumber;
+
+  @NonNull
+  public final TextView tvVisi;
+
+  @NonNull
+  public final TextView tvVisiValue;
+
+  private FragmentDetailCandidateBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextView descValue, @NonNull ImageView ivBack, @NonNull ImageView partyImg,
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvSupportingParties,
+      @NonNull MaterialDivider separator1, @NonNull TextView tvCapres, @NonNull TextView tvCawapres,
+      @NonNull TextView tvMisi, @NonNull TextView tvNamaCapresValue,
+      @NonNull TextView tvNamaCawapresValue, @NonNull TextView tvParties,
+      @NonNull TextView tvValueNumber, @NonNull TextView tvVisi, @NonNull TextView tvVisiValue) {
     this.rootView = rootView;
+    this.descValue = descValue;
+    this.ivBack = ivBack;
+    this.partyImg = partyImg;
+    this.progressBar = progressBar;
+    this.rvSupportingParties = rvSupportingParties;
+    this.separator1 = separator1;
+    this.tvCapres = tvCapres;
+    this.tvCawapres = tvCawapres;
+    this.tvMisi = tvMisi;
+    this.tvNamaCapresValue = tvNamaCapresValue;
+    this.tvNamaCawapresValue = tvNamaCawapresValue;
+    this.tvParties = tvParties;
+    this.tvValueNumber = tvValueNumber;
+    this.tvVisi = tvVisi;
+    this.tvVisiValue = tvVisiValue;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +116,105 @@ public final class FragmentDetailCandidateBinding implements ViewBinding {
 
   @NonNull
   public static FragmentDetailCandidateBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.descValue;
+      TextView descValue = ViewBindings.findChildViewById(rootView, id);
+      if (descValue == null) {
+        break missingId;
+      }
 
-    return new FragmentDetailCandidateBinding((FrameLayout) rootView);
+      id = R.id.ivBack;
+      ImageView ivBack = ViewBindings.findChildViewById(rootView, id);
+      if (ivBack == null) {
+        break missingId;
+      }
+
+      id = R.id.partyImg;
+      ImageView partyImg = ViewBindings.findChildViewById(rootView, id);
+      if (partyImg == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.rvSupportingParties;
+      RecyclerView rvSupportingParties = ViewBindings.findChildViewById(rootView, id);
+      if (rvSupportingParties == null) {
+        break missingId;
+      }
+
+      id = R.id.separator1;
+      MaterialDivider separator1 = ViewBindings.findChildViewById(rootView, id);
+      if (separator1 == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCapres;
+      TextView tvCapres = ViewBindings.findChildViewById(rootView, id);
+      if (tvCapres == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCawapres;
+      TextView tvCawapres = ViewBindings.findChildViewById(rootView, id);
+      if (tvCawapres == null) {
+        break missingId;
+      }
+
+      id = R.id.tvMisi;
+      TextView tvMisi = ViewBindings.findChildViewById(rootView, id);
+      if (tvMisi == null) {
+        break missingId;
+      }
+
+      id = R.id.tvNamaCapresValue;
+      TextView tvNamaCapresValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvNamaCapresValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvNamaCawapresValue;
+      TextView tvNamaCawapresValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvNamaCawapresValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvParties;
+      TextView tvParties = ViewBindings.findChildViewById(rootView, id);
+      if (tvParties == null) {
+        break missingId;
+      }
+
+      id = R.id.tvValueNumber;
+      TextView tvValueNumber = ViewBindings.findChildViewById(rootView, id);
+      if (tvValueNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.tvVisi;
+      TextView tvVisi = ViewBindings.findChildViewById(rootView, id);
+      if (tvVisi == null) {
+        break missingId;
+      }
+
+      id = R.id.tvVisiValue;
+      TextView tvVisiValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvVisiValue == null) {
+        break missingId;
+      }
+
+      return new FragmentDetailCandidateBinding((ConstraintLayout) rootView, descValue, ivBack,
+          partyImg, progressBar, rvSupportingParties, separator1, tvCapres, tvCawapres, tvMisi,
+          tvNamaCapresValue, tvNamaCawapresValue, tvParties, tvValueNumber, tvVisi, tvVisiValue);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

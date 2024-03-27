@@ -213,14 +213,36 @@ class BerandaFragment : Fragment() {
     }
 
     private fun showPresidential(data: GetAllPresidentialResponse?) {
-        val adapter = ProfilePresidentialCandidateAdapter()
+        val adapter = ProfilePresidentialCandidateAdapter(object: ProfilePresidentialCandidateAdapter.OnItemClickListener{
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("presidentialId", id)
+                }
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_biographyPersonFragment,
+                    bundle
+                )
+            }
+
+        })
         adapter.submitAllPresidential(data?.data ?: emptyList())
         binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCapres.adapter = adapter
     }
 
     private fun showVicePresidential(data: GetAllPresidentialResponse?) {
-        val adapter = ProfilePresidentialCandidateAdapter()
+        val adapter = ProfilePresidentialCandidateAdapter(object: ProfilePresidentialCandidateAdapter.OnItemClickListener{
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("vicePresidentialId", id)
+                }
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_biographyPersonFragment,
+                    bundle
+                )
+            }
+
+        })
         adapter.submitAllPresidential(data?.data ?: emptyList())
         binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCapres.adapter = adapter

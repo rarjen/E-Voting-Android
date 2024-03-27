@@ -40,7 +40,7 @@ class ProfileFragment : Fragment() {
         fetchUserProfile(savedToken)
 
         binding.ivBack.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_akunFragment)
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         return binding.root

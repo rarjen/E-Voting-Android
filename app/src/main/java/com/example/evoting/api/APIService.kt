@@ -3,9 +3,9 @@ package com.example.evoting.api
 import com.example.evoting.model.AuthMeResponse
 import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.model.CreateVoteResponse
-import com.example.evoting.model.DataGetAllPresidentialResponse
 import com.example.evoting.model.GetAllPartiesResponse
 import com.example.evoting.model.GetAllPresidentialResponse
+import com.example.evoting.model.GetBiographyResponse
 import com.example.evoting.model.GetOneCandidateNumberResponse
 import com.example.evoting.model.GetOnePartyResponse
 import com.example.evoting.model.LoginRequest
@@ -94,4 +94,16 @@ interface APIService {
         @Header("Authorization") token: String?,
         @Path("id") id: String
     ): GetOnePartyResponse
+
+    @GET("presidental/{id}")
+    suspend fun getOnePresidentialCandidateEndpoint(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): GetBiographyResponse
+
+    @GET("vice-presidental/{id}")
+    suspend fun getOneVicePresidentialCandidateEndpoint(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): GetBiographyResponse
 }

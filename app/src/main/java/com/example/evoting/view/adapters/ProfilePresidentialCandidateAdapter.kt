@@ -11,7 +11,7 @@ import com.example.evoting.databinding.CardCandidateBinding
 import com.example.evoting.model.DataGetAllPresidentialResponse
 
 class ProfilePresidentialCandidateAdapter(
-    private val onItemClick: AdapterView.OnItemClickListener? = null
+    private val onItemClick: OnItemClickListener? = null
 ):  RecyclerView.Adapter<ProfilePresidentialCandidateAdapter.ViewHolder>(){
 
     private val diffCallback = object : DiffUtil.ItemCallback<DataGetAllPresidentialResponse>() {
@@ -35,18 +35,6 @@ class ProfilePresidentialCandidateAdapter(
     fun submitAllPresidential(value: List<DataGetAllPresidentialResponse>) = differ.submitList(value)
 
 
-    inner class ViewHolder(private var binding: CardCandidateBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: DataGetAllPresidentialResponse) {
-            binding.apply {
-                tvValueCandidateName.text = data.name
-                Glide.with(this.imgCapres)
-                    .load(data.imgUrl)
-                    .fitCenter()
-                    .into(binding.imgCapres)
-            }
-        }
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return ViewHolder(CardCandidateBinding.inflate(inflater, parent, false))
@@ -59,5 +47,28 @@ class ProfilePresidentialCandidateAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = differ.currentList[position]
         data.let { holder.bind(data) }
+    }
+
+    inner class ViewHolder(private var binding: CardCandidateBinding): RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.onItemClick(differ.currentList[adapterPosition].id!!)
+            }
+        }
+
+        fun bind(data: DataGetAllPresidentialResponse) {
+            binding.apply {
+                tvValueCandidateName.text = data.name
+                Glide.with(this.imgCapres)
+                    .load(data.imgUrl)
+                    .fitCenter()
+                    .into(binding.imgCapres)
+            }
+        }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(id: String)
     }
 }
