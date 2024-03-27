@@ -107,4 +107,28 @@ class MyViewModel(private val repository: MyRepository): ViewModel() {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
         }
     }
+
+    fun getOnePartyClient(token: String?, id: String) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getOneParty(token, id)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun getOnePresidentialClient(token: String?, id: String) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getOnePresidential(token, id)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
+
+    fun getOneVicePresidentialClient(token: String?, id: String) = liveData(Dispatchers.IO) {
+        try {
+            emit(Resource.success(data = repository.getOneVicePresidential(token, id)))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred"))
+        }
+    }
 }

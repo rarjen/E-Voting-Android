@@ -49,6 +49,13 @@ class GetAllPairNumberAdapter (
     }
 
     inner class ViewHolder(private var binding: CardCandidatePairBinding): RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.onItemClick(differ.currentList[adapterPosition].id!!)
+            }
+        }
+
         fun bind(data: DataCandidateNumberResponse) {
             binding.apply {
                 tvValuePresidentialName.text = data.presidentalCandidateName
@@ -59,5 +66,9 @@ class GetAllPairNumberAdapter (
                     .into(binding.imgCover)
             }
         }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(id: String)
     }
 }

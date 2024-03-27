@@ -1,6 +1,5 @@
 package com.example.evoting.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class DataGetOneCandidateResponse(
@@ -17,5 +16,11 @@ data class DataGetOneCandidateResponse(
     @SerializedName("vice_presidental_candidate_id")
     val vicePresidentalCandidateId: String?,
     @SerializedName("vice_presidental_candidate_name")
-    val vicePresidentalCandidateName: String?
+    val vicePresidentalCandidateName: String?,
+    @SerializedName("mission")
+    val mission: List<String>?,
+    @SerializedName("vision")
+    val vision: String?,
+    @SerializedName("supportingParties")
+    val supportingParties: List<String>?
 )

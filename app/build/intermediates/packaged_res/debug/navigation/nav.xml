@@ -9,7 +9,17 @@
         android:id="@+id/berandaFragment2"
         android:name="com.example.evoting.view.fragments.BerandaFragment"
         android:label="fragment_beranda"
-        tools:layout="@layout/fragment_beranda" />
+        tools:layout="@layout/fragment_beranda" >
+        <action
+            android:id="@+id/action_berandaFragment2_to_detailPartyFragment"
+            app:destination="@id/detailPartyFragment" />
+        <action
+            android:id="@+id/action_berandaFragment2_to_detailCandidateFragment"
+            app:destination="@id/detailCandidateFragment" />
+        <action
+            android:id="@+id/action_berandaFragment2_to_biographyPersonFragment"
+            app:destination="@id/biographyPersonFragment" />
+    </fragment>
     <fragment
         android:id="@+id/voteFragment"
         android:name="com.example.evoting.view.fragments.VoteFragment"
@@ -50,4 +60,19 @@
             android:id="@+id/action_ubahPasswordFragment_to_akunFragment"
             app:destination="@id/akunFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailPartyFragment"
+        android:name="com.example.evoting.view.fragments.DetailPartyFragment"
+        android:label="fragment_detail_party"
+        tools:layout="@layout/fragment_detail_party" />
+    <fragment
+        android:id="@+id/detailCandidateFragment"
+        android:name="com.example.evoting.view.fragments.DetailCandidateFragment"
+        android:label="fragment_detail_candidate"
+        tools:layout="@layout/fragment_detail_candidate" />
+    <fragment
+        android:id="@+id/biographyPersonFragment"
+        android:name="com.example.evoting.view.fragments.BiographyPersonFragment"
+        android:label="fragment_biography_person"
+        tools:layout="@layout/fragment_biography_person" />
 </navigation>

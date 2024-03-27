@@ -36,7 +36,7 @@ class UbahPasswordFragment : Fragment() {
         val savedToken = pref.read(Enum.PREF_NAME.value).toString()
 
         binding.ivBack.setOnClickListener {
-            findNavController().navigate(R.id.action_ubahPasswordFragment_to_akunFragment)
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         binding.btnUpdatePassword.setOnClickListener {

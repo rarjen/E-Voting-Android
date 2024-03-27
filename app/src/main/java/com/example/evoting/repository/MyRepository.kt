@@ -31,10 +31,13 @@ class MyRepository() {
 
     //Party
     suspend fun getAllParties(token: String?) = apiService.getAllPartiesEndpoint(token)
+    suspend fun getOneParty(token: String?, id: String) = apiService.getOnePartyEndpoint(token, id)
 
     //Presidential
     suspend fun getAllPresidential(token: String?) = apiService.getAllPresidentialEndpoint(token)
+    suspend fun getOnePresidential(token: String?, id: String) = apiService.getOnePresidentialCandidateEndpoint(token, id)
 
     //Vice Predidential
     suspend fun getAllVicePresidential(token: String?) = apiService.getAllVicePresidentialEndpoint(token)
+    suspend fun getOneVicePresidential(token: String?, id: String) = apiService.getOneVicePresidentialCandidateEndpoint(token, id)
 }

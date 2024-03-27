@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    tools:context=".view.fragments.DetailPartyFragment">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back_24"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        app:layout_constraintCircleRadius="30dp"
+        android:id="@+id/partyImg"
+        app:layout_constraintTop_toBottomOf="@id/ivBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="180dp"
+        android:outlineProvider="paddedBounds"
+        android:elevation="10dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/profile"
+        android:scaleType="fitXY"
+        android:layout_height="180dp" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/partyImg"
+        android:layout_marginTop="30dp"
+        android:text="Nama"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvValueNamaPartai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNama"
+        android:layout_marginTop="5dp"
+        android:text="Nama Partai"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvValueNamaPartai"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:dividerInsetStart="16dp"
+        app:dividerInsetEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tvFullName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator1"
+        android:layout_marginTop="20dp"
+        android:text="Nama Resmi"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvValueFullNamaPartai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFullName"
+        android:layout_marginTop="5dp"
+        android:text="Nama Partai"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvValueFullNamaPartai"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:dividerInsetStart="16dp"
+        app:dividerInsetEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator2"
+        android:layout_marginTop="20dp"
+        android:text="Deskripsi"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvValueDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDesc"
+        android:layout_marginTop="5dp"
+        android:text="Nama Partai"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_width="380dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

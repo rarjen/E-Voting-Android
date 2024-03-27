@@ -47,6 +47,12 @@ class PartiesAdapter(private val onItemClick: OnItemClickListener? = null): Recy
 
     inner class ViewHolder(private var binding: CardPartySliderBinding): RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.onItemClick(differ.currentList[adapterPosition].id!!)
+            }
+        }
+
         fun bind(data: DataGetAllParties){
             binding.apply {
                 valueNameParty.text = data.abbreviation
@@ -56,5 +62,9 @@ class PartiesAdapter(private val onItemClick: OnItemClickListener? = null): Recy
                     .into(binding.imgParty)
             }
         }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(id: String)
     }
 }

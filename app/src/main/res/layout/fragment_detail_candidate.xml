@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    tools:context=".view.fragments.DetailCandidateFragment">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back_24"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvValueNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/ivBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="1" />
+
+    <ImageView
+        app:layout_constraintCircleRadius="30dp"
+        android:id="@+id/partyImg"
+        app:layout_constraintTop_toBottomOf="@id/tvValueNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="320dp"
+        android:outlineProvider="paddedBounds"
+        android:elevation="10dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/profile"
+        android:scaleType="fitXY"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvCapres"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/partyImg"
+        android:text="CALON PRESIDEN"
+        android:fontFamily="@font/montserrat_regular"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvCawapres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/partyImg"
+        android:text="CALON WAKIL PRESIDEN"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="25dp"
+        android:textAlignment="center"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvNamaCapresValue"
+        android:layout_width="180dp"
+        android:layout_marginTop="2dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCapres"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginStart="25dp"
+        android:textAlignment="center"
+        android:text="Calon Presiden 1"/>
+
+    <TextView
+        android:id="@+id/tvNamaCawapresValue"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCapres"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="2dp"
+        android:padding="2dp"
+        android:textAlignment="center"
+        android:text="Calon Wakil Presiden dengan title yang gila 1"/>
+
+
+    <TextView
+        android:id="@+id/tvParties"
+        android:text="Partai Pengusung"
+        android:layout_width="match_parent"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNamaCawapresValue"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSupportingParties"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tvParties" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvSupportingParties"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:dividerInsetStart="120dp"
+        app:dividerInsetEnd="120dp"/>
+
+    <TextView
+        android:id="@+id/tvVisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="VISI"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/separator1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvVisiValue"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="misi 123 blablablabablablabasdasdasdasdfasfsdla"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvVisi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvMisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="MISI"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvVisiValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/descValue"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMisi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
+        android:textSize="9sp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="1. Contoh misi "/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

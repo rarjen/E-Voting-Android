@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.evoting.R
 import com.example.evoting.databinding.FragmentBerandaBinding
 import com.example.evoting.model.CandidateNumberResponse
 import com.example.evoting.model.GetAllPartiesResponse
@@ -192,28 +194,72 @@ class BerandaFragment : Fragment() {
     }
 
     private fun showParties(data: GetAllPartiesResponse?) {
-        val adapter = PartiesAdapter()
+        val adapter = PartiesAdapter(object: PartiesAdapter.OnItemClickListener {
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("partyId", id)
+                }
+
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_detailPartyFragment,
+                    bundle
+                )
+            }
+
+        })
         adapter.submitAllParties(data?.data ?: emptyList())
         binding.rvPartai.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvPartai.adapter = adapter
     }
 
     private fun showPresidential(data: GetAllPresidentialResponse?) {
-        val adapter = ProfilePresidentialCandidateAdapter()
+        val adapter = ProfilePresidentialCandidateAdapter(object: ProfilePresidentialCandidateAdapter.OnItemClickListener{
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("presidentialId", id)
+                }
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_biographyPersonFragment,
+                    bundle
+                )
+            }
+
+        })
         adapter.submitAllPresidential(data?.data ?: emptyList())
         binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCapres.adapter = adapter
     }
 
     private fun showVicePresidential(data: GetAllPresidentialResponse?) {
-        val adapter = ProfilePresidentialCandidateAdapter()
+        val adapter = ProfilePresidentialCandidateAdapter(object: ProfilePresidentialCandidateAdapter.OnItemClickListener{
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("vicePresidentialId", id)
+                }
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_biographyPersonFragment,
+                    bundle
+                )
+            }
+
+        })
         adapter.submitAllPresidential(data?.data ?: emptyList())
         binding.rvCapres.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCapres.adapter = adapter
     }
 
     private fun showCandidate(data: CandidateNumberResponse) {
-        val adapter =  GetAllPairNumberAdapter(null)
+        val adapter =  GetAllPairNumberAdapter(object: GetAllPairNumberAdapter.OnItemClickListener {
+            override fun onItemClick(id: String) {
+                val bundle = Bundle().apply {
+                    putString("candidateId", id)
+                }
+                findNavController().navigate(
+                    R.id.action_berandaFragment2_to_detailCandidateFragment,
+                    bundle
+                )
+            }
+        })
         adapter.submitData(data.data ?: emptyList())
         binding.rvCawapres.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         binding.rvCawapres.adapter = adapter
