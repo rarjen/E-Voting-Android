@@ -79,6 +79,7 @@ class DetailCandidateFragment : Fragment() {
         binding.tvNamaCawapresValue.text = candidateData?.vicePresidentalCandidateName
         binding.tvVisiValue.text = candidateData?.vision
         binding.descValue.text = missionText
+        binding.tvValueNumber.text = candidateData?.number.toString()
         Glide.with(this.binding.partyImg)
             .load(candidateData?.imgUrl)
             .fitCenter()

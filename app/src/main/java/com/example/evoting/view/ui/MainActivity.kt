@@ -45,18 +45,6 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.bottomNavigation
         navView.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if (isVoted == 1) {
-               when (destination.id) {
-                   R.id.voteFragment -> {
-                       val bottomSheetAlreadyVotedFragment = BottomSheetAlreadyVotedFragment()
-                       bottomSheetAlreadyVotedFragment.show(supportFragmentManager, bottomSheetAlreadyVotedFragment.tag)
-                       navController.navigate(R.id.berandaFragment2)
-                   }
-               }
-            }
-        }
-
     }
 
     private fun fetchUserCoroutines (token: String) {
@@ -64,7 +52,9 @@ class MainActivity : AppCompatActivity() {
             when (it.status) {
                 Status.SUCCESS -> {
                     isVoted = it.data?.data?.isVoted!!
-                    Log.d("isVoted", isVoted.toString())
+                    if (isVoted == 1) {
+                        binding.bottomNavigation.menu.findItem(R.id.voteFragment).isVisible = false
+                    }
                 }
                 Status.ERROR -> {
                     val errMsg = it.data?.message.toString()
