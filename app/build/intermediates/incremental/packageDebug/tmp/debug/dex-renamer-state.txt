@@ -1,4 +1,4 @@
-#Wed Mar 27 10:41:37 WIB 2024
+#Mon May 27 08:28:30 WIB 2024
 base.0=G\:\\Kotlin\\android-evoting\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=G\:\\Kotlin\\android-evoting\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=G\:\\Kotlin\\android-evoting\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex

@@ -59,6 +59,7 @@ class VoteConfirmationFragment : BottomSheetDialogFragment() {
 
             val encryptedId = Crypto().encrypt(this.id!!)
 
+            Log.d("ENCRYPTED DATA ID USER", encryptedId)
             postVoteCoroutines(savedToken, encryptedId)
         }
 

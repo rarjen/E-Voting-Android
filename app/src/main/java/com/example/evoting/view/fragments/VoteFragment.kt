@@ -47,6 +47,7 @@ class VoteFragment : Fragment() {
             when (it.status) {
                 Status.SUCCESS -> {
                     showCandidate(it.data!!)
+                    Log.d("TESTDATACANDIDATE", it.data.toString())
                     binding.progressBar.visibility = View.GONE
                 }
                 Status.ERROR -> {
